@@ -6,7 +6,7 @@ const factButton =  document.querySelector('#Btn');
 //  console.log(promise);
 
 // const getFacts = async() => {
-//     let response = await fetch(URL);
+//     let response = await fetch(URL);             // async await
 //     let json = await response.json();         
 //     paraFacts.innerText = json[0].text;
 // }
@@ -20,8 +20,8 @@ function getFacts(){
         return response.json();
     })
     .then((json) => {
-        console.log(json);
-        paraFacts.innerText = json[0].text;
+        console.log(json.length);                               //Promise chaining
+        paraFacts.innerText = json[Math.floor(Math.random() * 5)].text;
     })
     .catch((error)=> {
         console.log(error);
